@@ -1,0 +1,13 @@
+{
+    "num_entradas": 2,
+    "entradas": [
+        {
+            "peso": 10.0,
+            "stop_loss": 0.2
+        },
+        {
+            "peso": 40.0,
+            "stop_loss": 0.05
+        }
+    ]
+}
