@@ -9,7 +9,6 @@ class BackException(Exception):
     """
     pass
 
-
 def obtener_numero(mensaje: str, min_val: float = 1.0) -> float:
     """Solicita un número (float) al usuario con reintentos.
        Si el usuario ingresa 'b', lanza BackException para retroceder.
