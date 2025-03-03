@@ -133,4 +133,4 @@ El archivo de configuración (`config.json`) debe contener una lista de "entrada
 Este programa es una herramienta simple pero efectiva para calcular la gestión del riesgo en escenarios de trading. Al permitir que los usuarios ingresen su capital, porcentaje de riesgo y apalancamiento deseado, puede ayudar a los traders a tomar decisiones más informadas basadas en su tolerancia al riesgo y expectativas del mercado.
 
 # Notas
-Entorno de trabajo (ANACONDA):CayiCryptoForge
+Entorno de trabajo (ANACONDA):CCF
