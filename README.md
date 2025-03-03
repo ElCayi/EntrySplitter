@@ -1,4 +1,4 @@
-# Calculadora de Riesgo v4.0
+# Calculadora de Riesgo v5.0
 
 Este programa ayuda a calcular la gestión del riesgo en operaciones de trading, incluyendo el cálculo automático del apalancamiento basado en el porcentaje de riesgo y el rango de precios esperado. El programa permite al usuario configurar ajustes, ingresar valores de capital y riesgo, y calcular el apalancamiento y el riesgo para diferentes escenarios.
 
