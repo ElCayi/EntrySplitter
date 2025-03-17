@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcbmimnnwfp62"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_roas6"]
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[node name="Label" type="Label"]
+custom_minimum_size = Vector2(60, 35)
+offset_right = 40.0
+offset_bottom = 14.0
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_roas6")
+text = "--"
+horizontal_alignment = 1
+vertical_alignment = 1

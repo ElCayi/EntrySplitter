@@ -1,0 +1,7 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+# Ignorar archivos generados por Godot
+*.import
+*.stex
+*.translation

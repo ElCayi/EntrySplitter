@@ -1,0 +1,238 @@
+[gd_scene load_steps=3 format=3 uid="uid://cedwa3pgbyp2a"]
+
+[sub_resource type="GDScript" id="GDScript_uchyk"]
+resource_name = "control"
+script/source = "extends Control
+
+@onready var tabla = $VBoxContainer/PanelContainer/Tree
+
+func _ready():
+	configurar_tabla()
+
+func configurar_tabla():
+	tabla.clear()  # Limpiar la tabla
+	var root = tabla.create_item()  # Crear raíz
+	tabla.set_hide_root(true)  # Ocultar el nodo raíz (opcional)
+	
+	# Definir las columnas correctamente (ahora con 9 columnas)
+	var columnas = [\"Entrada\", \"Capital\", \"Apalancado\", \"Leverage\", \"Riesgo USD\", \"Riesgo %\", \"Stop %\", \"Take Profit %\", \"Ganancia USD\"]
+	tabla.columns = columnas.size()  # Asegurar que haya espacio para todas
+	
+	for i in range(columnas.size()):
+		tabla.set_column_title(i, columnas[i])
+		tabla.set_column_expand(i, true)
+	
+	# Agregar una fila vacía de prueba
+	agregar_fila(1, 0, 0, 0, 0, 0, 0, 0, 0)
+
+func agregar_fila(entrada, capital, apalancado, leverage, riesgo_usd, riesgo_porcentaje, stop, take_profit, ganancia):
+	if tabla.get_root().get_child_count() >= 20:
+		return  # No permite más de 20 filas
+
+	var item = tabla.create_item(tabla.get_root())
+	item.set_text(0, str(entrada))
+	item.set_text(1, str(capital))
+	item.set_text(2, str(apalancado))
+	item.set_text(3, str(leverage))
+	item.set_text(4, str(riesgo_usd))
+	item.set_text(5, str(riesgo_porcentaje))
+	item.set_text(6, str(stop))
+	item.set_text(7, str(take_profit))
+	item.set_text(8, str(ganancia))  # Nueva columna de Ganancia USD
+"
+
+[sub_resource type="FontFile" id="FontFile_0fbet"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/3/0/ascent = 0.0
+cache/0/3/0/descent = 0.0
+cache/0/3/0/underline_position = 0.0
+cache/0/3/0/underline_thickness = 0.0
+cache/0/3/0/scale = 1.0
+cache/0/1/0/ascent = 0.0
+cache/0/1/0/descent = 0.0
+cache/0/1/0/underline_position = 0.0
+cache/0/1/0/underline_thickness = 0.0
+cache/0/1/0/scale = 1.0
+cache/0/26/0/ascent = 0.0
+cache/0/26/0/descent = 0.0
+cache/0/26/0/underline_position = 0.0
+cache/0/26/0/underline_thickness = 0.0
+cache/0/26/0/scale = 1.0
+cache/0/36/0/ascent = 0.0
+cache/0/36/0/descent = 0.0
+cache/0/36/0/underline_position = 0.0
+cache/0/36/0/underline_thickness = 0.0
+cache/0/36/0/scale = 1.0
+cache/0/46/0/ascent = 0.0
+cache/0/46/0/descent = 0.0
+cache/0/46/0/underline_position = 0.0
+cache/0/46/0/underline_thickness = 0.0
+cache/0/46/0/scale = 1.0
+cache/0/56/0/ascent = 0.0
+cache/0/56/0/descent = 0.0
+cache/0/56/0/underline_position = 0.0
+cache/0/56/0/underline_thickness = 0.0
+cache/0/56/0/scale = 1.0
+cache/0/66/0/ascent = 0.0
+cache/0/66/0/descent = 0.0
+cache/0/66/0/underline_position = 0.0
+cache/0/66/0/underline_thickness = 0.0
+cache/0/66/0/scale = 1.0
+cache/0/71/0/ascent = 0.0
+cache/0/71/0/descent = 0.0
+cache/0/71/0/underline_position = 0.0
+cache/0/71/0/underline_thickness = 0.0
+cache/0/71/0/scale = 1.0
+cache/0/76/0/ascent = 0.0
+cache/0/76/0/descent = 0.0
+cache/0/76/0/underline_position = 0.0
+cache/0/76/0/underline_thickness = 0.0
+cache/0/76/0/scale = 1.0
+cache/0/81/0/ascent = 0.0
+cache/0/81/0/descent = 0.0
+cache/0/81/0/underline_position = 0.0
+cache/0/81/0/underline_thickness = 0.0
+cache/0/81/0/scale = 1.0
+cache/0/86/0/ascent = 0.0
+cache/0/86/0/descent = 0.0
+cache/0/86/0/underline_position = 0.0
+cache/0/86/0/underline_thickness = 0.0
+cache/0/86/0/scale = 1.0
+cache/0/91/0/ascent = 0.0
+cache/0/91/0/descent = 0.0
+cache/0/91/0/underline_position = 0.0
+cache/0/91/0/underline_thickness = 0.0
+cache/0/91/0/scale = 1.0
+cache/0/101/0/ascent = 0.0
+cache/0/101/0/descent = 0.0
+cache/0/101/0/underline_position = 0.0
+cache/0/101/0/underline_thickness = 0.0
+cache/0/101/0/scale = 1.0
+cache/0/106/0/ascent = 0.0
+cache/0/106/0/descent = 0.0
+cache/0/106/0/underline_position = 0.0
+cache/0/106/0/underline_thickness = 0.0
+cache/0/106/0/scale = 1.0
+cache/0/61/0/ascent = 0.0
+cache/0/61/0/descent = 0.0
+cache/0/61/0/underline_position = 0.0
+cache/0/61/0/underline_thickness = 0.0
+cache/0/61/0/scale = 1.0
+cache/0/51/0/ascent = 0.0
+cache/0/51/0/descent = 0.0
+cache/0/51/0/underline_position = 0.0
+cache/0/51/0/underline_thickness = 0.0
+cache/0/51/0/scale = 1.0
+cache/0/41/0/ascent = 0.0
+cache/0/41/0/descent = 0.0
+cache/0/41/0/underline_position = 0.0
+cache/0/41/0/underline_thickness = 0.0
+cache/0/41/0/scale = 1.0
+cache/0/31/0/ascent = 0.0
+cache/0/31/0/descent = 0.0
+cache/0/31/0/underline_position = 0.0
+cache/0/31/0/underline_thickness = 0.0
+cache/0/31/0/scale = 1.0
+cache/0/11/0/ascent = 0.0
+cache/0/11/0/descent = 0.0
+cache/0/11/0/underline_position = 0.0
+cache/0/11/0/underline_thickness = 0.0
+cache/0/11/0/scale = 1.0
+cache/0/21/0/ascent = 0.0
+cache/0/21/0/descent = 0.0
+cache/0/21/0/underline_position = 0.0
+cache/0/21/0/underline_thickness = 0.0
+cache/0/21/0/scale = 1.0
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_uchyk")
+
+[node name="Capital_" type="Label" parent="."]
+layout_mode = 0
+offset_right = 333.0
+offset_bottom = 123.0
+theme_override_fonts/font = SubResource("FontFile_0fbet")
+theme_override_font_sizes/font_size = 21
+text = "Capital:"
+
+[node name="RiesgoMáximo" type="Label" parent="."]
+layout_mode = 0
+offset_left = 214.0
+offset_right = 547.0
+offset_bottom = 123.0
+theme_override_fonts/font = SubResource("FontFile_0fbet")
+theme_override_font_sizes/font_size = 21
+text = "Riesgo Máximo: "
+
+[node name="capital" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 1.0
+offset_right = 185.0
+offset_bottom = 32.0
+
+[node name="riesgomaximo" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 367.0
+offset_top = 1.0
+offset_right = 436.0
+offset_bottom = 32.0
+
+[node name="Take Profit" type="Label" parent="."]
+layout_mode = 0
+offset_left = 505.0
+offset_right = 803.0
+offset_bottom = 123.0
+theme_override_fonts/font = SubResource("FontFile_0fbet")
+theme_override_font_sizes/font_size = 21
+text = "Take Profit: "
+
+[node name="takeprofit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 623.0
+offset_top = 1.0
+offset_right = 692.0
+offset_bottom = 32.0
+
+[node name="StopLoss" type="Label" parent="."]
+layout_mode = 0
+offset_left = 742.0
+offset_right = 1075.0
+offset_bottom = 123.0
+theme_override_fonts/font = SubResource("FontFile_0fbet")
+theme_override_font_sizes/font_size = 21
+text = "Stop Loss:"
+
+[node name="stoploss" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 848.0
+offset_right = 917.0
+offset_bottom = 31.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 249.0
+offset_right = 1081.0
+offset_bottom = 605.0
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
+modulate = Color(0.0324869, 0.701128, 0.839654, 1)
+layout_mode = 2
+
+[node name="Tree" type="Tree" parent="VBoxContainer/PanelContainer"]
+layout_mode = 2
+columns = 9
