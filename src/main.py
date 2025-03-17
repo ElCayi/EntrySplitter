@@ -7,7 +7,7 @@ from config_manager import (
     configurar_entradas,
     mostrar_configuracion
 )
-from risk_calculator import calculadora_riesgo
+from risk_calculator import calculadora_riesgo_v5 as calculadora_riesgo  # 🔹 Corrección aquí
 
 # Configure logging
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -50,6 +50,7 @@ def main():
             riesgo_max_porcentaje = riesgo_input / 100
             logging.debug(f"Riesgo máximo ingresado: {riesgo_input}% -> {riesgo_max_porcentaje} en decimal")
 
+            # 🔹 CORRECCIÓN AQUÍ: Ahora la función tiene el nombre correcto
             calculadora_riesgo(config, total_capital, riesgo_max_porcentaje)
 
             repetir = input("¿Quieres hacer otro cálculo? (s/n): ").strip().lower()
